@@ -57,7 +57,8 @@ CoreFunctions.getUser = function(source)
     end
 
     userData.setPlayerWarnings = function(warnings)
-        
+        local warnings = TPZ.GetUserData(_source).warnings
+        --
     end
 
     userData.setGroup = function(group)
