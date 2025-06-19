@@ -1,12 +1,20 @@
-RegisterNetEvent('vorp:deleteVehicle')
-RegisterNetEvent('vorp:delHorse')
-AddEventHandler('vorp:deleteVehicle', CoreAction.Admin.DeleteVehicleInRadius)
-AddEventHandler('vorp:delHorse', CoreAction.Admin.DeleteHorse)
-RegisterNetEvent('vorp:teleportWayPoint', CoreAction.Admin.TeleportToWayPoint)
-RegisterNetEvent('vorp_core:Client:OnPlayerHeal', CoreAction.Admin.HealPlayer)
+
+AddEventHandler('vorp:teleportWayPoint')
+RegisterNetEvent('vorp:teleportWayPoint', function()
+    TriggerEvent("tpz_core:teleportToWayPoint")
+end)
+
+AddEventHandler('vorp_core:Client:OnPlayerHeal')
+RegisterNetEvent('vorp_core:Client:OnPlayerHeal', function()
+
+end)
+
+AddEventHandler('vorp_core:Client:OnPlayerRevive')
 RegisterNetEvent('vorp_core:Client:OnPlayerRespawn', function(param)
     CoreAction.Player.RespawnPlayer(param)
 end)
+
+AddEventHandler('vorp_core:Client:OnPlayerRevive')
 RegisterNetEvent('vorp_core:Client:OnPlayerRevive', function(bool)
     bool = bool or true
     CoreAction.Player.ResurrectPlayer(false, nil, bool)
