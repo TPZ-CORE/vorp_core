@@ -47,7 +47,7 @@ AddEventHandler('vorp:ShowAdvancedRightNotification', function(text, dict, icon,
 end)
 
 AddEventHandler('vorp:ShowBasicTopNotification', function(text, duration)
-    VorpNotification:NotifyBasicTop(tostring(text), tonumber(duration))
+    exports.tpz_core:getCoreAPI().NotifyBasicTop(tostring(text), tonumber(duration))
 end)
 
 AddEventHandler('vorp:ShowSimpleCenterText', function(text, duration)
