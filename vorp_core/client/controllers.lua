@@ -6,18 +6,25 @@ end)
 
 AddEventHandler('vorp_core:Client:OnPlayerHeal')
 RegisterNetEvent('vorp_core:Client:OnPlayerHeal', function()
+    TriggerEvent("tpz_core:healPlayer")
 
+    -- tpz_metabolism.
+    TriggerEvent("tpz_metabolism:setMetabolismValue", "HUNGER", "add", 100)
+    TriggerEvent("tpz_metabolism:setMetabolismValue", "THIRST", "add", 100)
+
+    TriggerEvent("tpz_metabolism:setMetabolismValue", "STRESS", "remove", 100)
+    TriggerEvent("tpz_metabolism:setMetabolismValue", "ALCOHOL", "remove", 100)
+            
+end)
+
+AddEventHandler('vorp_core:Client:OnPlayerRespawn')
+RegisterNetEvent('vorp_core:Client:OnPlayerRespawn', function()
+    TriggerEvent("tpz_core:resurrectPlayer", false)
 end)
 
 AddEventHandler('vorp_core:Client:OnPlayerRevive')
-RegisterNetEvent('vorp_core:Client:OnPlayerRespawn', function(param)
-    CoreAction.Player.RespawnPlayer(param)
-end)
-
-AddEventHandler('vorp_core:Client:OnPlayerRevive')
-RegisterNetEvent('vorp_core:Client:OnPlayerRevive', function(bool)
-    bool = bool or true
-    CoreAction.Player.ResurrectPlayer(false, nil, bool)
+RegisterNetEvent('vorp_core:Client:OnPlayerRevive', function()
+    TriggerEvent("tpz_core:resurrectPlayer", true)
 end)
 
 AddEventHandler("vorp:SelectedCharacter")
