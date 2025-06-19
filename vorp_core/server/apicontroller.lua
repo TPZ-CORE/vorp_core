@@ -74,11 +74,11 @@ CoreFunctions.getUser = function(source)
     end
 
     userData.getUsedCharacter.setFirstname = function(firstname)
-        -- nothing
+        xPlayer.setFirstName(firstname)
     end
 
     userData.getUsedCharacter.setLastname = function(lastname)
-        -- nothing
+        xPlayer.setLastName(lastname)
     end
 
     userData.getUsedCharacter.updateSkin = function(skin)
