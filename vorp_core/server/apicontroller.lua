@@ -1,7 +1,7 @@
 CoreFunctions = {}
 
 CoreFunctions.maxCharacters = function(source)
-    local TPZ = exports["tpz_core"]:getCoreAPI()
+    local TPZ = exports.tpz_core:getCoreAPI()
     return TPZ.GetUserData(source).max_chars
 end
 
@@ -13,7 +13,7 @@ CoreFunctions.getUser = function(source)
     local _source = source
     if not _source then return nil end
 
-    local TPZ = exports["tpz_core"]:getCoreAPI()
+    local TPZ = exports.tpz_core:getCoreAPI()
 
     if TPZ.GetPlayer[_source].loaded() then
         return nil
