@@ -2,7 +2,7 @@ CoreFunctions = {}
 
 CoreFunctions.maxCharacters = function(source)
     local TPZ = exports["tpz_core"]:getCoreAPI()
-    return TPZ.GetUserData(_source).max_chars
+    return TPZ.GetUserData(source).max_chars
 end
 
 CoreFunctions.getUsers = function()
