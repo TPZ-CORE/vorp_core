@@ -93,39 +93,39 @@ CoreFunctions.getUserByCharId = function(charid)
 end
 
 CoreFunctions.NotifyTip = function(source, text, duration)
-    TriggerClientEvent('vorp:Tip', source, text, duration)
+    TriggerClientEvent('tpz_core:sendTipNotification', source, text, duration)
 end
 
 CoreFunctions.NotifyLeft = function(source, title, subtitle, dict, icon, duration, colors)
-    TriggerClientEvent('vorp:NotifyLeft', source, title, subtitle, dict, icon, duration, colors)
+    TriggerClientEvent('tpz_core:sendLeftNotification', source, title, subtitle, dict, icon, duration, colors)
 end
 
 CoreFunctions.NotifyRightTip = function(source, text, duration)
-    TriggerClientEvent('vorp:TipRight', source, text, duration)
+    TriggerClientEvent('tpz_core:sendRightTipNotification', source, text, duration)
 end
 
 CoreFunctions.NotifyObjective = function(source, text, duration)
-    TriggerClientEvent('vorp:TipBottom', source, text, duration)
+    TriggerClientEvent('tpz_core:sendBottomTipNotification', source, text, duration)
 end
 
 CoreFunctions.NotifyTop = function(source, text, location, duration)
-    TriggerClientEvent('vorp:NotifyTop', source, text, location, duration)
+    TriggerClientEvent('tpz_core:sendTopNotification', source, text, location, duration)
 end
 
 CoreFunctions.NotifySimpleTop = function(source, text, subtitle, duration)
-    TriggerClientEvent('vorp:ShowTopNotification', source, text, subtitle, duration)
+    TriggerClientEvent('tpz_core:sendSimpleTopNotification', source, text, subtitle, duration)
 end
 
 CoreFunctions.NotifyAvanced = function(source, text, dict, icon, text_color, duration, quality, showquality)
-    TriggerClientEvent('vorp:ShowAdvancedRightNotification', source, text, dict, icon, text_color, duration, quality, showquality)
+    TriggerClientEvent('tpz_core:sendAdvancedRightNotification', source, text, dict, icon, text_color, duration, quality, showquality)
 end
 
 CoreFunctions.NotifyCenter = function(source, text, duration, color)
-    TriggerClientEvent('vorp:ShowSimpleCenterText', source, text, duration, color)
+    TriggerClientEvent('tpz_core:sendSimpleCenterNotification', source, text, duration, color)
 end
 
 CoreFunctions.NotifyBottomRight = function(source, text, duration)
-    TriggerClientEvent('vorp:ShowBottomRight', source, text, duration)
+    TriggerClientEvent('tpz_core:sendBottomRightNotification', source, text, duration)
 end
 
 CoreFunctions.NotifyFail = function(source, text, subtitle, duration)
@@ -133,22 +133,22 @@ CoreFunctions.NotifyFail = function(source, text, subtitle, duration)
 end
 
 CoreFunctions.NotifyDead = function(source, title, audioRef, audioName, duration)
-    TriggerClientEvent('vorp:deadplayerNotifY', source, title, audioRef, audioName, duration)
+    TriggerClientEvent('tpz_core:sendDeadPlayerNotification', source, title, audioRef, audioName, duration)
 end
 
 CoreFunctions.NotifyUpdate = function(source, title, subtitle, duration)
-    TriggerClientEvent('vorp:updatemissioNotify', source, title, subtitle, duration)
+    TriggerClientEvent('tpz_core:sendMissionUpdateNotification', source, title, subtitle, duration)
 end
 
 CoreFunctions.NotifyBasicTop = function(source, title, duration)
-    TriggerClientEvent('vorp:ShowBasicTopNotification', source, title, duration)
+    TriggerClientEvent('tpz_core:sendBasicTopNotification', source, title, duration)
 end
 
 CoreFunctions.NotifyWarning = function(source, title, msg, audioRef, audioName, duration)
-    TriggerClientEvent('vorp:warningNotify', source, title, msg, audioRef, audioName, duration)
+    TriggerClientEvent('tpz_core:sendWarningNotification', source, title, msg, audioRef, audioName, duration)
 end
 CoreFunctions.NotifyLeftRank = function(source, title, subtitle, dict, icon, duration, color)
-    TriggerClientEvent('vorp:LeftRank', source, title, subtitle, dict, icon, duration, color)
+    TriggerClientEvent('tpz_core:sendLeftRankNotification', source, title, subtitle, dict, icon, duration, color)
 end
 
 CoreFunctions.dbUpdateAddTables = function(tbl)
