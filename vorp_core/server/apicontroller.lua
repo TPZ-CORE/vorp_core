@@ -24,6 +24,7 @@ CoreFunctions.getUser = function(source)
         getUsedCharacter = {
 
             identifier = xPlayer.getIdentifier(),
+            ‎charIdentifier‎ = xPlayer.getCharacterIdentifier(),
 
         },
 
