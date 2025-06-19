@@ -12,6 +12,10 @@ RegisterNetEvent('vorp_core:Client:OnPlayerRevive', function(bool)
     CoreAction.Player.ResurrectPlayer(false, nil, bool)
 end)
 
+AddEventHandler("vorp:SelectedCharacter")
+RegisterNetEvent("vorp:SelectedCharacter", function()
+    TriggerEvent("tpz_core:isPlayerReady")
+end)
 
 ---@deprecated
 RegisterNetEvent("vorp:Heal", function()
