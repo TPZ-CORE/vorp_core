@@ -89,7 +89,7 @@ CoreFunctions.getUser = function(source)
 end
 
 CoreFunctions.getUserByCharId = function(charid)
-    
+    return nil
 end
 
 CoreFunctions.NotifyTip = function(source, text, duration)
