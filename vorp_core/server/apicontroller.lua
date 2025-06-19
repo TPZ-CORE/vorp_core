@@ -89,13 +89,7 @@ CoreFunctions.getUser = function(source)
 end
 
 CoreFunctions.getUserByCharId = function(charid)
-    if charid == nil then return nil end
-    for k, v in pairs(_users) do
-        if v.usedCharacterId ~= -1 and tonumber(v.usedCharacterId) == tonumber(charid) then
-            return v.GetUser()
-        end
-    end
-    return nil
+    
 end
 
 CoreFunctions.NotifyTip = function(source, text, duration)
