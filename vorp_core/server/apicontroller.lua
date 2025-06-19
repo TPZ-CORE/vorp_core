@@ -25,6 +25,8 @@ CoreFunctions.getUser = function(source)
     userData.source = _source
     userData.getGroup = xPlayer.getGroup()
 
+    -- CHARACTER OBJECT FUNCTIONS 
+
     userData.getUsedCharacter = {
         source = _source, 
         identifier = xPlayer.getIdentifier(),
