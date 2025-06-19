@@ -19,7 +19,11 @@ CoreFunctions.getUser = function(source)
     end
 
     local xPlayer = TPZ.GetPlayer[_source]
+
     local userData = {}
+
+    userData.source = _source
+    userData.getGroup = xPlayer.getGroup()
 
     userData.getUsedCharacter = {
         source = _source, 
@@ -41,6 +45,44 @@ CoreFunctions.getUser = function(source)
         isdead = xPlayer.isDead(),
 
     }
+
+    userData.getUserCharacters = 3 -- must finish it
+
+    userData.getIdentifier = function()
+        return xPlayer.getIdentifier()
+    end
+
+    userData.getPlayerwarnings = function()
+        return 0
+    end
+
+    userData.setPlayerWarnings = function(warnings)
+        
+    end
+
+    userData.setGroup = function(group)
+        xPlayer.setGroup(group)
+    end
+
+    userData.setCharperm = function(char)
+        
+    end
+
+    userData.getNumOfCharacters = function()
+        return 0
+    end
+
+    userData.addCharacter = function(data)
+        
+    end
+
+    userData.removeCharacter = function(charid)
+        
+    end
+
+    userData.setUsedCharacter = function(charid)
+        
+    end
 
     return userData
 
