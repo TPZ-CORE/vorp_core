@@ -6,7 +6,7 @@ CoreFunctions.maxCharacters = function(source)
 end
 
 CoreFunctions.getUsers = function()
-    return nil
+    return {}
 end
 
 CoreFunctions.getUser = function(source)
