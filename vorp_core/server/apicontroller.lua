@@ -69,7 +69,7 @@ CoreFunctions.getUser = function(source)
     end
 
     userData.getNumOfCharacters = function()
-        return 0
+        return xPlayer.getTotalCharactersNum()
     end
 
     userData.addCharacter = function(data)
