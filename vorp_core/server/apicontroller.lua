@@ -9,22 +9,37 @@ CoreFunctions.getUsers = function()
 end
 
 CoreFunctions.getUser = function(source)
-    if not source then return nil end
+    local _source = source
+    if not _source then return nil end
 
     local TPZ = exports["tpz_core"]:getCoreAPI()
 
-    if TPZ.GetPlayer[source].loaded() then
+    if TPZ.GetPlayer[_source].loaded() then
         return nil
     end
 
-    local xPlayer = TPZ.GetPlayer[source]
+    local xPlayer = TPZ.GetPlayer[_source]
 
     local data = {
 
         getUsedCharacter = {
-
+            source = _source, 
             identifier = xPlayer.getIdentifier(),
             ‎charIdentifier‎ = xPlayer.getCharacterIdentifier(),
+            job = xPlayer.getJob(),
+            jobgrade = xPlayer.getJobGrade(),
+            group = xPlayer.getGroup(),
+            firstname = xPlayer.getFirstName(),
+            lastname = xPlayer.getLastName(),
+            money = xPlayer.getAccount(0),
+            gold = xPlayer.getAccount(1),
+            gender = xPlayer.getGender(),
+            steamname = GetPlayerName(_source),
+            nickname = xPlayer.getFirtName() .. " " .. xPlayer.getLastName(),
+            dob = xPlayer.getDob(),
+            skin = xPlayer.getOutfitComponents(),
+            comps = xPlayer.getOutfitComponents(),
+            isdead = xPlayer.isDead(),
 
         },
 
