@@ -1,7 +1,7 @@
 CoreFunctions = {}
 
 CoreFunctions.maxCharacters = function(source)
-    return 3
+    return TPZ.GetUserData(_source).max_chars
 end
 
 CoreFunctions.getUsers = function()
