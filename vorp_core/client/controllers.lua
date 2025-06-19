@@ -1,11 +1,12 @@
 
-AddEventHandler('vorp:teleportWayPoint')
-RegisterNetEvent('vorp:teleportWayPoint', function()
+
+RegisterNetEvent('vorp:teleportWayPoint')
+AddEventHandler('vorp:teleportWayPoint', function()
     TriggerEvent("tpz_core:teleportToWayPoint")
 end)
 
-AddEventHandler('vorp_core:Client:OnPlayerHeal')
-RegisterNetEvent('vorp_core:Client:OnPlayerHeal', function()
+RegisterNetEvent('vorp_core:Client:OnPlayerHeal')
+AddEventHandler('vorp_core:Client:OnPlayerHeal', function()
     TriggerEvent("tpz_core:healPlayer")
 
     -- tpz_metabolism.
@@ -17,18 +18,18 @@ RegisterNetEvent('vorp_core:Client:OnPlayerHeal', function()
             
 end)
 
-AddEventHandler('vorp_core:Client:OnPlayerRespawn')
-RegisterNetEvent('vorp_core:Client:OnPlayerRespawn', function()
+RegisterNetEvent('vorp_core:Client:OnPlayerRespawn')
+AddEventHandler('vorp_core:Client:OnPlayerRespawn', function()
     TriggerEvent("tpz_core:resurrectPlayer", false)
 end)
 
-AddEventHandler('vorp_core:Client:OnPlayerRevive')
-RegisterNetEvent('vorp_core:Client:OnPlayerRevive', function()
+RegisterNetEvent('vorp_core:Client:OnPlayerRevive')
+AddEventHandler('vorp_core:Client:OnPlayerRevive'; function() 
     TriggerEvent("tpz_core:resurrectPlayer", true)
 end)
 
-AddEventHandler("vorp:SelectedCharacter")
-RegisterNetEvent("vorp:SelectedCharacter", function()
+RegisterNetEvent("vorp:SelectedCharacter")
+AddEventHandler("vorp:SelectedCharacter", function()
     TriggerEvent("tpz_core:isPlayerReady")
 end)
 
