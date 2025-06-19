@@ -287,18 +287,31 @@ CoreFunctions.Whitelist = {
 CoreFunctions.Player = {
     Heal = function(source)
         if not source then return end
-        TriggerEvent("vorp_core:Server:OnPlayerHeal", source)
-        TriggerClientEvent("vorp_core:Client:OnPlayerHeal", source)
+        TriggerClientEvent('tpz_core:healPlayer', tonumber(source))
+
+        -- tpz_metabolism.
+        TriggerClientEvent("tpz_metabolism:setMetabolismValue", tonumber(source), "HUNGER", "add", 100)
+        TriggerClientEvent("tpz_metabolism:setMetabolismValue", tonumber(source), "THIRST", "add", 100)
+
+        TriggerClientEvent("tpz_metabolism:setMetabolismValue", tonumber(source), "STRESS", "remove", 100)
+        TriggerClientEvent("tpz_metabolism:setMetabolismValue", tonumber(source), "ALCOHOL", "remove", 100)
+
     end,
     Revive = function(source, param)
         if not source then return end
-        TriggerEvent("vorp_core:Server:OnPlayerRevive", source, param)
-        TriggerClientEvent("vorp_core:Client:OnPlayerRevive", source, param)
+       TriggerClientEvent('tpz_core:resurrectPlayer', tonumber(source), true)
+
+        -- tpz_metabolism.
+        TriggerClientEvent("tpz_metabolism:setMetabolismValue", tonumber(source), "HUNGER", "add", 100)
+        TriggerClientEvent("tpz_metabolism:setMetabolismValue", tonumber(source), "THIRST", "add", 100)
+
+        TriggerClientEvent("tpz_metabolism:setMetabolismValue", tonumber(source), "STRESS", "remove", 100)
+        TriggerClientEvent("tpz_metabolism:setMetabolismValue", tonumber(source), "ALCOHOL", "remove", 100)
+
     end,
     Respawn = function(source, param)
         if not source then return end
-        TriggerEvent("vorp_core:Server:OnPlayerRespawn", source, param)
-        TriggerClientEvent("vorp_core:Client:OnPlayerRespawn", source, param)
+        
     end,
 }
 
