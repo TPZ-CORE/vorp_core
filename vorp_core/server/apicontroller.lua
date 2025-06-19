@@ -11,10 +11,26 @@ end
 CoreFunctions.getUser = function(source)
     if not source then return nil end
 
-    local sid = GetPlayerIdentifierByType(source, 'steam')
-    if not sid or not _users[sid] then return nil end
+    local TPZ = exports["tpz_core"]:getCoreAPI()
 
-    return _users[sid].GetUser()
+    if TPZ.GetPlayer[source].loaded() then
+        return nil
+    end
+
+    local xPlayer = TPZ.GetPlayer[source]
+
+    local data = {
+
+        getUsedCharacter = {
+
+            identifier = xPlayer.getIdentifier(),
+
+        },
+
+    }
+
+    return { getUsedCharacter = data }
+
 end
 
 CoreFunctions.getUserByCharId = function(charid)
@@ -114,25 +130,15 @@ CoreFunctions.Callback = {
 CoreFunctions.Whitelist = {
 
     getEntry = function(identifier)
-        if not identifier then return nil end
-        local userid = Whitelist.Functions.GetUserId(identifier)
-        if userid then
-            return Whitelist.Functions.GetUsersData(userid)
-        end
         return nil
     end,
 
     whitelistUser = function(steam)
-        if not steam then return end
-        return Whitelist.Functions.InsertWhitelistedUser({ identifier = steam, status = true })
+        return false
     end,
 
     unWhitelistUser = function(steam)
-        if not steam then return end
-        local id = Whitelist.Functions.GetUserId(steam)
-        if id then
-            Whitelist.Functions.WhitelistUser(id, false)
-        end
+        return false
     end,
 }
 
@@ -153,65 +159,6 @@ CoreFunctions.Player = {
         TriggerClientEvent("vorp_core:Client:OnPlayerRespawn", source, param)
     end,
 }
-
-
--- WIP
---[[ CoreFunctions.Command = {
-
-    Register = function(data)
-        if Commands[data.name] then
-            print('^1[ERROR] ^0Command ^1' .. data.name .. ' ^0already exists.')
-            return
-        end
-
-        Commands[data.name] = data
-
-        for index, value in pairs(data) do
-            RegisterCommands(value, index)
-        end
-    end,
-
-    Remove = function(name)
-        if not Commands[name] then
-            print('^1[ERROR] ^0Command ^1' .. name .. ' ^0does not exist can only remove commands you have added through core export.')
-            return
-        end
-        Commands[name] = nil
-    end
-}
- ]]
-
-
---Example usage
-
---[[ local data = {
-    CommandName = {                               -- must be unique
-        --webhook
-        webhook = "link",                         -- discord log when someone uses this command leave to false if you dont need
-        custom = "message to display on webhook", -- for webhook
-        title = "webhook title",                  -- webhook title
-        ---#end webhook
-        commandName = "command name",             -- name of the command to use
-        label = "command label",                  -- label of command when using
-        suggestion = {                            -- chat arguments needed this is needd to check all arguments have met
-            { name = "Id",  help = "palyer id" }, -- add how many you need
-            { name = "msg", help = "description" },
-        },
-        userCheck = true,                         -- does this command need to check if user is online ? lets say its an admin comand and argument is a player id or it could be identifier or char id etc
-        groupAllowed = { "admin" },               -- from users table in the database this group will be allowed to use this command
-        aceAllowed = 'vorpcore.setGroup.Command', -- ace allow or false must have this in your permissions file
-        jobsAllow = {},                           -- jobs allowed ? remove or leave empty if not needed, not supporting ranks yet
-        callFunction = function(data)             -- dont touch
-            -- you can run code here trigger client events or server events , exports etc,
-            -- local source = data.source -- player id
-            -- local args = data.args -- arguments from chat
-            -- local raw = data.rawCommand
-            -- local data = data.config -- all the values you set above
-        end
-    }
-}
- ]]
-
 
 exports('GetCore', function()
     return CoreFunctions
