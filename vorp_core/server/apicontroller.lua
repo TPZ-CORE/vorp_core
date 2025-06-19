@@ -152,15 +152,16 @@ CoreFunctions.NotifyLeftRank = function(source, title, subtitle, dict, icon, dur
 end
 
 CoreFunctions.dbUpdateAddTables = function(tbl)
-    dbupdaterAPI.addTables(tbl)
+    -- nothing
 end
 
 CoreFunctions.dbUpdateAddUpdates = function(updt)
-    dbupdaterAPI.addUpdates(updt)
+    -- nothing
 end
 
 CoreFunctions.AddWebhook = function(title, webhook, description, color, name, logo, footerlogo, avatar)
-    TriggerEvent('vorp_core:addWebhook', title, webhook, description, color, name, logo, footerlogo, avatar)
+    local TPZ = exports["tpz_core"]:getCoreAPI()
+    TPZ.SendToDiscord(webhook, title, description, color)
 end
 
 CoreFunctions.Callback = {
