@@ -53,7 +53,7 @@ CoreFunctions.getUser = function(source)
     end
 
     userData.getPlayerwarnings = function()
-        return 0
+        return TPZ.GetUserData(_source).warnings
     end
 
     userData.setPlayerWarnings = function(warnings)
