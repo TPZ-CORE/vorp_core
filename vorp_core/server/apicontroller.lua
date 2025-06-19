@@ -19,33 +19,30 @@ CoreFunctions.getUser = function(source)
     end
 
     local xPlayer = TPZ.GetPlayer[_source]
+    local userData = {}
 
-    local data = {
-
-        getUsedCharacter = {
-            source = _source, 
-            identifier = xPlayer.getIdentifier(),
-            ‎charIdentifier‎ = xPlayer.getCharacterIdentifier(),
-            job = xPlayer.getJob(),
-            jobgrade = xPlayer.getJobGrade(),
-            group = xPlayer.getGroup(),
-            firstname = xPlayer.getFirstName(),
-            lastname = xPlayer.getLastName(),
-            money = xPlayer.getAccount(0),
-            gold = xPlayer.getAccount(1),
-            gender = xPlayer.getGender(),
-            steamname = GetPlayerName(_source),
-            nickname = xPlayer.getFirtName() .. " " .. xPlayer.getLastName(),
-            dob = xPlayer.getDob(),
-            skin = xPlayer.getOutfitComponents(),
-            comps = xPlayer.getOutfitComponents(),
-            isdead = xPlayer.isDead(),
-
-        },
+    userData.getUsedCharacter = {
+        source = _source, 
+        identifier = xPlayer.getIdentifier(),
+        charIdentifier‎ = xPlayer.getCharacterIdentifier(),
+        job = xPlayer.getJob(),
+        jobgrade = xPlayer.getJobGrade(),
+        group = xPlayer.getGroup(),
+        firstname = xPlayer.getFirstName(),
+        lastname = xPlayer.getLastName(),
+        money = xPlayer.getAccount(0),
+        gold = xPlayer.getAccount(1),
+        gender = xPlayer.getGender(),
+        steamname = GetPlayerName(_source),
+        nickname = xPlayer.getFirtName() .. " " .. xPlayer.getLastName(),
+        dob = xPlayer.getDob(),
+        skin = xPlayer.getOutfitComponents(),
+        comps = xPlayer.getOutfitComponents(),
+        isdead = xPlayer.isDead(),
 
     }
 
-    return { getUsedCharacter = data }
+    return userData
 
 end
 
