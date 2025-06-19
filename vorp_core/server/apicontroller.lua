@@ -129,7 +129,7 @@ CoreFunctions.NotifyBottomRight = function(source, text, duration)
 end
 
 CoreFunctions.NotifyFail = function(source, text, subtitle, duration)
-    TriggerClientEvent('vorp:failmissioNotifY', source, text, subtitle, duration)
+    TriggerClientEvent('tpz_core:sendFailMissionNotification', source, text, subtitle, duration)
 end
 
 CoreFunctions.NotifyDead = function(source, title, audioRef, audioName, duration)
