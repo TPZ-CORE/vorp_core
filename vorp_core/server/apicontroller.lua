@@ -1,11 +1,11 @@
 CoreFunctions = {}
 
 CoreFunctions.maxCharacters = function(source)
-    return GetMaxCharactersAllowed(source)
+    return 3
 end
 
 CoreFunctions.getUsers = function()
-    return _users
+    return nil
 end
 
 CoreFunctions.getUser = function(source)
