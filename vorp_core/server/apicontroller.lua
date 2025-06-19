@@ -57,15 +57,11 @@ CoreFunctions.getUser = function(source)
         xPlayer.setJobGrade(grade)
     end
 
-    userData.getUsedCharacter.setJobGrade = function(grade)
-        xPlayer.setJobGrade(grade)
+    userData.getUsedCharacter.setJobLabel = function(label)
+        -- nothing
     end
 
-    userData.getUsedCharacter.setJobGrade = function(label)
-        --nothing
-    end
-
-    userData.getUsedCharacter.setJobGrade = function(group)
+    userData.getUsedCharacter.setGroup = function(group)
         xPlayer.setGroup(group)
     end
 
