@@ -46,6 +46,95 @@ CoreFunctions.getUser = function(source)
 
     }
 
+    userData.getUsedCharacter.setJob = function(job)
+        xPlayer.setJob(job)
+    end
+
+    userData.getUsedCharacter.setJobGrade = function(grade)
+        xPlayer.setJobGrade(grade)
+    end
+
+    userData.getUsedCharacter.setJobGrade = function(grade)
+        xPlayer.setJobGrade(grade)
+    end
+
+    userData.getUsedCharacter.setJobGrade = function(label)
+        --nothing
+    end
+
+    userData.getUsedCharacter.setJobGrade = function(group)
+        xPlayer.setGroup(group)
+    end
+
+    userData.getUsedCharacter.setRol = function(amount)
+        -- nothing
+    end
+
+    userData.getUsedCharacter.setXp = function(amount)
+        -- nothing
+    end
+
+    userData.getUsedCharacter.setFirstname = function(firstname)
+        -- nothing
+    end
+
+    userData.getUsedCharacter.setLastname = function(lastname)
+        -- nothing
+    end
+
+    userData.getUsedCharacter.updateSkin = function(skin)
+        -- nothing
+    end
+
+    userData.getUsedCharacter.updateComps = function(comps)
+        -- nothing
+    end
+    
+    userData.getUsedCharacter.updateCompTints = function(tints)
+        -- nothing
+    end
+
+    userData.getUsedCharacter.addCurrency = function(account, amount)
+        xPlayer.addAccount(account, amount)
+    end
+
+    userData.getUsedCharacter.removeCurrency = function(account, amount)
+        xPlayer.removeAccount(account, amount)
+    end
+
+    userData.getUsedCharacter.addXp = function(xp)
+        -- nothing
+    end
+
+    userData.getUsedCharacter.removeXp = function(xp)
+        -- nothing
+    end
+
+    userData.getUsedCharacter.setAge = function(age)
+        -- nothing
+    end
+
+    userData.getUsedCharacter.setCharDescription = function(desc)
+        -- nothing
+    end
+
+    userData.getUsedCharacter.setNickName = function(nickname)
+        -- nothing
+    end
+
+    userData.getUsedCharacter.setGender = function(gender)
+        -- nothing
+    end
+
+    userData.getUsedCharacter.updateInvCapacity = function(addAmount)
+        -- todo
+    end
+
+    userData.getUsedCharacter.setSkills = function(skillName, value)
+        -- nothing
+    end
+
+    -- OTHER FUNCTIONS
     userData.getUserCharacters = {} 
 
     userData.getIdentifier = function()
