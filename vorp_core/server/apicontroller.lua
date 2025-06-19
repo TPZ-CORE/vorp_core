@@ -46,7 +46,7 @@ CoreFunctions.getUser = function(source)
 
     }
 
-    userData.getUserCharacters = 3 -- must finish it
+    userData.getUserCharacters = xPlayer.getTotalCharactersNum()
 
     userData.getIdentifier = function()
         return xPlayer.getIdentifier()
