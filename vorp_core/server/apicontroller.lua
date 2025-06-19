@@ -312,8 +312,15 @@ CoreFunctions.Player = {
     Respawn = function(source, param)
         if not source then return end
 
-        TriggerClientEvent("tpz_core:onPlayerRespawn", source)
-        
+        TriggerClientEvent('tpz_core:resurrectPlayer', tonumber(source), false)
+
+        -- tpz_metabolism.
+        TriggerClientEvent("tpz_metabolism:setMetabolismValue", tonumber(source), "HUNGER", "add", 100)
+        TriggerClientEvent("tpz_metabolism:setMetabolismValue", tonumber(source), "THIRST", "add", 100)
+
+        TriggerClientEvent("tpz_metabolism:setMetabolismValue", tonumber(source), "STRESS", "remove", 100)
+        TriggerClientEvent("tpz_metabolism:setMetabolismValue", tonumber(source), "ALCOHOL", "remove", 100)
+
     end,
 }
 
