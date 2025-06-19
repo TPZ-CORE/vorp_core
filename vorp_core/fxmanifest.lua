@@ -10,7 +10,6 @@ repository 'https://github.com/VORPCORE/vorp-core-lua'
 
 
 client_scripts {
-    'client/ref/*.lua',
     'client/exports/*.lua',
     'client/*.lua',
 }
