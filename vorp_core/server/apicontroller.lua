@@ -311,6 +311,8 @@ CoreFunctions.Player = {
     end,
     Respawn = function(source, param)
         if not source then return end
+
+        TriggerClientEvent("tpz_core:onPlayerRespawn", source)
         
     end,
 }
